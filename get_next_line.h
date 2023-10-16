@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Carlos <Carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:21:05 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/09 14:08:47 by cravegli         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:32:34 by Carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,17 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <fcntl.h>
-# define BUFFER_SIZE 1000000
+# include <sys/types.h>
+# include <sys/uio.h>
+
 
 char	*get_next_line(int fd);
 char	*fitstr(char *str);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *s, size_t n);
+int		ft_strlen(char *str);
 
 #endif
