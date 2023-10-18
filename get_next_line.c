@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Carlos <Carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:19:40 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/16 12:49:22 by Carlos           ###   ########.fr       */
+/*   Updated: 2023/10/18 14:29:13 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*update_buff(char *res, char *buff)
 {
 	char	*temp;
-	
+
 	temp = ft_strjoin(res, buff);
 	free(res);
 	return (temp);
@@ -26,9 +26,9 @@ char	*ft_get_line(char *buff)
 	int		len;
 	char	*line;
 
-	if (!buff)
-		return (NULL);
 	len = 0;
+	if (!buff[len])
+		return (NULL);
 	while (buff[len] != '\n' && buff[len])
 		len++;
 	line = (char *)ft_calloc(len + 2, sizeof(char));
@@ -40,7 +40,7 @@ char	*ft_get_line(char *buff)
 		line[len] = buff[len];
 		len++;
 	}
-	if (buff[len] == '\n')
+	if (buff[len] == '\n' && buff[len])
 		line[len] = '\n';
 	return (line);
 }
@@ -49,7 +49,7 @@ char	*get_res(char *buff)
 {
 	char	*res;
 	int		len;
-	int 	i;
+	int		i;
 
 	len = 0;
 	while (buff[len] && buff[len] != '\n')
@@ -78,7 +78,7 @@ char	*ft_read(char *res, int fd)
 {
 	char	*buffer;
 	int		b_read;
-	
+
 	if (!res)
 		res = ft_calloc(1, 1);
 	buffer = (char *)ft_calloc(BUFFER_SIZE + 1, sizeof(char));
@@ -106,7 +106,9 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
 		return (NULL);
+	}
 	buffer = ft_read(buffer, fd);
 	if (!buffer)
 		return (NULL);

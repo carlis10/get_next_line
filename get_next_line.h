@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Carlos <Carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:21:05 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/16 11:32:34 by Carlos           ###   ########.fr       */
+/*   Updated: 2023/10/18 13:11:16 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/uio.h>
-
 
 char	*get_next_line(int fd);
 char	*fitstr(char *str);
