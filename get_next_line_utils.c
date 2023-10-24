@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Carlos <Carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:20:48 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/16 11:45:57 by Carlos           ###   ########.fr       */
+/*   Updated: 2023/10/24 12:04:36 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned char	p;
 	int				size;
 
+	if (!s)
+		return (NULL);
 	p = (unsigned char)c;
 	size = ft_strlen((char *)s);
 	while (size >= 0)
@@ -114,10 +116,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*s3;
 	size_t	size;
 
+	if (!s1 || !s2)
+		return (NULL);
 	size = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
 	s3 = (char *)ft_calloc(size, sizeof(char));
 	if (!s3)
-		return (0);
+		return (NULL);
 	ft_strlcpy(s3, s1, size);
 	ft_strlcat(s3, s2, size);
 	return (s3);
