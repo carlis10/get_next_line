@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 11:21:05 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/30 16:20:31 by cravegli         ###   ########.fr       */
+/*   Created: 2023/10/30 16:08:54 by cravegli          #+#    #+#             */
+/*   Updated: 2023/10/30 16:20:41 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
+# include <limits.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
