@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:19:40 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/30 16:23:18 by cravegli         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:39:21 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ char	*ft_start_read(char *res, int fd, char *buff)
 	while (b_read && !(ft_strrchr(res, '\n')))
 	{
 		b_read = read(fd, buff, BUFFER_SIZE);
+		if (b_read == -1)
+		{
+			free(buff);
+			free(res);
+			return (NULL);
+		}
 		buff[b_read] = 0;
 		temp = ft_strjoin(res, buff);
 		free(res);
@@ -108,12 +114,8 @@ char	*get_next_line(int fd)
 	static char	*buffer;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE < 0 || read(fd, 0, 0) < 0)
-	{
-		free(buffer);
-		buffer = NULL;
+	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);
-	}
 	buffer = ft_read(buffer, fd);
 	if (!buffer)
 		return (NULL);
