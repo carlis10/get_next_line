@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:21:05 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/30 16:20:31 by cravegli         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:48:50 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <unistd.h>
 # include <stdio.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
+# if BUFFER_SIZE < 1 || BUFFER_SIZE > 100000
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/uio.h>

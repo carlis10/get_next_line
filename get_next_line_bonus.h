@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:08:54 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/30 16:20:41 by cravegli         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:49:20 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 
 # include <limits.h>
 # include <unistd.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
+# if BUFFER_SIZE < 1 || BUFFER_SIZE > 100000
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
+# endif
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/types.h>
