@@ -6,7 +6,7 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:21:05 by cravegli          #+#    #+#             */
-/*   Updated: 2023/10/31 13:48:50 by cravegli         ###   ########.fr       */
+/*   Updated: 2023/10/31 14:25:14 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # include <sys/uio.h>
 
 char	*get_next_line(int fd);
-char	*fitstr(char *str);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
